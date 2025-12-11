@@ -7,7 +7,7 @@ import Contact from "./Pages/Contact/Contact.jsx";
 import Projects from "./Pages/Projects/Projects.jsx";
 import ScrollToTop from "./Components/ScrollToTop.jsx";
 import About from "./Pages/About/About.jsx";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const Layout = () => {
   return (
