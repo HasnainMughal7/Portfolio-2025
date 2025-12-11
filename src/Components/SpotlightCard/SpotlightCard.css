@@ -1,0 +1,52 @@
+
+.card-container {
+  position: relative;
+  border-radius: 12px;
+  background-color: transparent;
+  border: none;
+  padding: 40px 20px;
+  overflow: hidden;
+  color: white;
+  isolation: isolate;
+}
+
+.spotlight-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  background: radial-gradient(
+    800px circle at var(--x) var(--y), 
+    rgba(255, 215, 0, 0.15), 
+    transparent 60%
+  );
+}
+
+.spotlight-border {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  border: 1px solid #FFD700;
+
+  mask-image: radial-gradient(
+    250px circle at var(--x) var(--y), 
+    black, 
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    250px circle at var(--x) var(--y), 
+    black, 
+    transparent 100%
+  );
+}
+
+.card-content {
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #FFD700;
+  --bg-color: #000000;
+  --card-bg: #1a1a1a;
+  --text-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    margin: 85px 0 0 0;
+  }
+}
