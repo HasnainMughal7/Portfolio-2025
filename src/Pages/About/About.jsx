@@ -19,17 +19,17 @@ const About = () => {
     const isTimelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
 
     const skills = [
-        { name: "MongoDB", icon: "🍃" },
-        { name: "Supabase", icon: "⚡" },
-        { name: "NextJS", icon: "▲" },
-        { name: "SQL", icon: "🗄️" },
-        { name: "TS", icon: "📘" },
-        { name: "Tailwind", icon: "🌊" },
-        { name: "NodeJS", icon: "🟢" },
-        { name: "ReactJS", icon: "⚛️" },
-        { name: "JS", icon: "🟨" },
-        { name: "CSS", icon: "🎨" },
-        { name: "HTML", icon: "🌐" },
+        { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Supabase", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+        { name: "NextJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", invert: true },
+        { name: "SQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Tailwind", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+        { name: "NodeJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "ReactJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "HTML", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     ];
 
     const experience = [
@@ -102,7 +102,12 @@ const About = () => {
                         >
                             <SpotlightCard mousePos={mousePos} className="skill-card">
                                 <div className="skill-card-content">
-                                    <span className="skill-icon">{skill.icon}</span>
+                                    <img
+                                        src={skill.img}
+                                        alt={skill.name}
+                                        className="skill-img"
+                                        style={skill.invert ? { filter: 'invert(1)' } : {}}
+                                    />
                                     <h3>{skill.name}</h3>
                                 </div>
                             </SpotlightCard>
