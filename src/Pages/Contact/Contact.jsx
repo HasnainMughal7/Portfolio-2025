@@ -34,11 +34,6 @@ const Contact = () => {
         e.preventDefault();
         setStatus("Sending...");
 
-        const serviceID = "service_pzt7sbk";
-        const template1ID = "template_0dnbe2p";
-        const template2ID = "template_3ihtyg2";
-        const publicKey = "L-DTeUKmb52gHykiT";
-
         const templateParams = {
             from_name: formData.name,
             from_email: formData.email,
@@ -48,25 +43,15 @@ const Contact = () => {
             message: formData.message,
         };
 
-        const template2Params = {
-            from_name: formData.name,
-            from_email: formData.email
-        }
-
-        emailjs.send(serviceID, template1ID, templateParams, publicKey)
-            .then((res) => {
-                emailjs.send(serviceID, template2ID, template2Params, publicKey)
-                    .then((response) => {
-                        setStatus("Success");
-                    }, (err) => {
-                        console.log("FAILED...", err);
-                        setStatus("Error");
-                    });
+        axios.post("https://hasnainmughal.app.n8n.cloud/webhook/send-quotation", templateParams)
+            .then((response) => {
+                setStatus("Success");
                 setFormData({ name: "", email: "", company: "", message: "", budget: "", services: [] });
             }, (err) => {
                 console.log("FAILED...", err);
                 setStatus("Error");
             });
+
     };
 
     return (
