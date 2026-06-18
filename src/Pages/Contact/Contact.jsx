@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import "./Contact.css";
 
 const Contact = () => {
@@ -53,8 +53,6 @@ const Contact = () => {
                 console.log("FAILED...", err);
                 setStatus("Error");
             });
-
-        // random comment ;)
 
     };
 
